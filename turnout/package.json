@@ -1,0 +1,11 @@
+{
+  "name": "turnout",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "A tiny event RSVP tracker. Node built-ins only, no dependencies.",
+  "scripts": {
+    "start": "node server.js",
+    "seed:large": "node seed-large.js"
+  }
+}

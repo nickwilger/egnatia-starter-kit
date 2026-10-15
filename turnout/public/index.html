@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turnout</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1a2027; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .sub { color: #667; margin-top: 0; }
+  .event { border: 1px solid #dde; border-radius: 6px; padding: 14px 16px; margin-bottom: 10px; }
+  .event h3 { margin: 0 0 2px; font-size: 1.05rem; }
+  .meta { color: #667; font-size: .88rem; }
+  .count { float: right; font-variant-numeric: tabular-nums; color: #0e5c63; font-weight: 600; }
+  form { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+  input, select, button { font: inherit; padding: 6px 8px; border: 1px solid #ccd; border-radius: 4px; }
+  button { background: #1a2027; color: #fff; border-color: #1a2027; cursor: pointer; }
+  .attendees { margin-top: 10px; font-size: .9rem; color: #445; }
+  nav { margin-top: 20px; display: flex; gap: 8px; }
+</style>
+</head>
+<body>
+
+<h1>Turnout</h1>
+<p class="sub">Events happening today: <span id="today">…</span></p>
+
+<div id="events"></div>
+
+<nav>
+  <button onclick="changePage(-1)">← Previous</button>
+  <button onclick="changePage(1)">Next →</button>
+  <span id="pageinfo" class="meta"></span>
+</nav>
+
+<script>
+let page = 0;
+let allEvents = [];
+
+async function loadToday() {
+  const res = await fetch('/api/events/today');
+  const events = await res.json();
+  document.getElementById('today').textContent =
+    events.length ? events.map(e => e.title).join(', ') : 'none';
+}
+
+async function loadEvents() {
+  const res = await fetch('/api/events?page=' + page);
+  const data = await res.json();
+  allEvents = data.events;
+
+  document.getElementById('pageinfo').textContent =
+    `Page ${page + 1} — ${data.total} events total`;
+
+  const container = document.getElementById('events');
+  container.innerHTML = '';
+
+  for (const event of allEvents) {
+    const div = document.createElement('div');
+    div.className = 'event';
+    div.innerHTML = `
+      <span class="count">${event.attendeeCount} going</span>
+      <h3>${event.title}</h3>
+      <div class="meta">${event.date} · ${event.location}</div>
+      <form onsubmit="submitRsvp(event, ${event.id})">
+        <input name="name" placeholder="Your name" required>
+        <select name="status">
+          <option value="yes">Going</option>
+          <option value="no">Not going</option>
+        </select>
+        <button type="submit">RSVP</button>
+      </form>
+      <div class="attendees" id="att-${event.id}"></div>
+    `;
+    container.appendChild(div);
+    showAttendees(event.id);
+  }
+}
+
+async function showAttendees(eventId) {
+  const res = await fetch('/api/attendees?eventId=' + eventId);
+  const list = await res.json();
+  const el = document.getElementById('att-' + eventId);
+  if (!el) return;
+  el.innerHTML = list.length
+    ? 'Going: ' + list.map(r => r.name).join(', ')
+    : 'Nobody yet.';
+}
+
+async function submitRsvp(ev, eventId) {
+  ev.preventDefault();
+  const form = ev.target;
+  await fetch('/api/rsvp', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      eventId,
+      name: form.name.value,
+      status: form.status.value,
+    }),
+  });
+  form.reset();
+  loadEvents();
+}
+
+function changePage(delta) {
+  page += delta;
+  if (page < 0) page = 0;
+  loadEvents();
+}
+
+// Hide events that have already happened.
+function hidePastEvents() {
+  const today = new Date().toISOString().split('T')[0];
+  for (let i = allEvents.length - 1; i >= 0; i--) {
+    if (allEvents[i].date < today) {
+      allEvents.splice(i, 1);
+    }
+  }
+}
+
+loadToday();
+loadEvents();
+</script>
+</body>
+</html>

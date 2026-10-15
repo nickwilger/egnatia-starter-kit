@@ -1,0 +1,474 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Tirana JS Meetup",
+      "date": "2026-08-31",
+      "location": "UET Campus, Tirana"
+    },
+    {
+      "id": 2,
+      "title": "Founder Coffee",
+      "date": "2026-09-01",
+      "location": "Destil Hostel"
+    },
+    {
+      "id": 3,
+      "title": "AI Builders Night",
+      "date": "2026-09-02",
+      "location": "Coolab Tirana"
+    },
+    {
+      "id": 4,
+      "title": "UET Career Fair",
+      "date": "2026-09-03",
+      "location": "Rruga e Kavajës 21"
+    },
+    {
+      "id": 5,
+      "title": "Startup Pitch Practice",
+      "date": "2026-09-04",
+      "location": "Blloku, Tirana"
+    },
+    {
+      "id": 6,
+      "title": "Design Critique",
+      "date": "2026-09-05",
+      "location": "Innospace"
+    },
+    {
+      "id": 7,
+      "title": "Open Source Saturday",
+      "date": "2026-09-06",
+      "location": "UET Campus, Tirana"
+    },
+    {
+      "id": 8,
+      "title": "Product Demo Day",
+      "date": "2026-09-07",
+      "location": "Destil Hostel"
+    },
+    {
+      "id": 9,
+      "title": "Freelancer Breakfast",
+      "date": "2026-09-08",
+      "location": "Coolab Tirana"
+    },
+    {
+      "id": 10,
+      "title": "Data Science Circle",
+      "date": "2026-09-09",
+      "location": "Rruga e Kavajës 21"
+    },
+    {
+      "id": 11,
+      "title": "Hackathon Kickoff",
+      "date": "2026-09-10",
+      "location": "Blloku, Tirana"
+    },
+    {
+      "id": 12,
+      "title": "Investor Office Hours",
+      "date": "2026-09-11",
+      "location": "Innospace"
+    },
+    {
+      "id": 13,
+      "title": "Marketing Workshop",
+      "date": "2026-09-12",
+      "location": "UET Campus, Tirana"
+    },
+    {
+      "id": 14,
+      "title": "Devops Roundtable",
+      "date": "2026-09-13",
+      "location": "Destil Hostel"
+    },
+    {
+      "id": 15,
+      "title": "Student Project Showcase",
+      "date": "2026-09-14",
+      "location": "Coolab Tirana"
+    }
+  ],
+  "rsvps": [
+    {
+      "id": 1,
+      "eventId": 1,
+      "name": "Elira Bregu",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 2,
+      "eventId": 1,
+      "name": "Denis Kola",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 3,
+      "eventId": 1,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 4,
+      "eventId": 2,
+      "name": "Denis Kola",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 5,
+      "eventId": 2,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 6,
+      "eventId": 2,
+      "name": "Ilir Prifti",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 7,
+      "eventId": 2,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 8,
+      "eventId": 3,
+      "name": "Sara Meta",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 9,
+      "eventId": 3,
+      "name": "Ilir Prifti",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 10,
+      "eventId": 3,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 11,
+      "eventId": 3,
+      "name": "Endrit Cami",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 12,
+      "eventId": 3,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 13,
+      "eventId": 4,
+      "name": "Ilir Prifti",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 14,
+      "eventId": 4,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 15,
+      "eventId": 5,
+      "name": "Ana Dervishi",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 16,
+      "eventId": 5,
+      "name": "Endrit Cami",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 17,
+      "eventId": 5,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 18,
+      "eventId": 6,
+      "name": "Endrit Cami",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 19,
+      "eventId": 6,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 20,
+      "eventId": 6,
+      "name": "Arben Hoxha",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 21,
+      "eventId": 6,
+      "name": "Elira Bregu",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 22,
+      "eventId": 7,
+      "name": "Blerta Nika",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 23,
+      "eventId": 7,
+      "name": "Arben Hoxha",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 24,
+      "eventId": 7,
+      "name": "Elira Bregu",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 25,
+      "eventId": 7,
+      "name": "Denis Kola",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 26,
+      "eventId": 7,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 27,
+      "eventId": 8,
+      "name": "Arben Hoxha",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 28,
+      "eventId": 8,
+      "name": "Elira Bregu",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 29,
+      "eventId": 9,
+      "name": "Elira Bregu",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 30,
+      "eventId": 9,
+      "name": "Denis Kola",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 31,
+      "eventId": 9,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 32,
+      "eventId": 10,
+      "name": "Denis Kola",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 33,
+      "eventId": 10,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 34,
+      "eventId": 10,
+      "name": "Ilir Prifti",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 35,
+      "eventId": 10,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 36,
+      "eventId": 11,
+      "name": "Sara Meta",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 37,
+      "eventId": 11,
+      "name": "Ilir Prifti",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 38,
+      "eventId": 11,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 39,
+      "eventId": 11,
+      "name": "Endrit Cami",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 40,
+      "eventId": 11,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 41,
+      "eventId": 12,
+      "name": "Ilir Prifti",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 42,
+      "eventId": 12,
+      "name": "Ana Dervishi",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 43,
+      "eventId": 13,
+      "name": "Ana Dervishi",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 44,
+      "eventId": 13,
+      "name": "Endrit Cami",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 45,
+      "eventId": 13,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 46,
+      "eventId": 14,
+      "name": "Endrit Cami",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 47,
+      "eventId": 14,
+      "name": "Blerta Nika",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 48,
+      "eventId": 14,
+      "name": "Arben Hoxha",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 49,
+      "eventId": 14,
+      "name": "Elira Bregu",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 50,
+      "eventId": 15,
+      "name": "Blerta Nika",
+      "status": "no",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 51,
+      "eventId": 15,
+      "name": "Arben Hoxha",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 52,
+      "eventId": 15,
+      "name": "Elira Bregu",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 53,
+      "eventId": 15,
+      "name": "Denis Kola",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    },
+    {
+      "id": 54,
+      "eventId": 15,
+      "name": "Sara Meta",
+      "status": "yes",
+      "createdAt": "2026-09-04T04:16:04.073Z"
+    }
+  ]
+}

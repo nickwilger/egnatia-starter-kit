@@ -35,6 +35,7 @@ docs/                    The project's memory. Filled-in examples — replace th
   roadmap.md               Every feature in stages. One stage in progress.
   handoff.md               Where the last session stopped. Overwritten each time.
 fallback/prototype.html  Zero-install prototype starter. Double-click to run (needs internet).
+turnout/                 The debugging exercise. Homework, not part of your project.
 ```
 
 Why `.claude/` and not `.github/`? Copilot's own folders are `.github/agents/`
@@ -96,6 +97,33 @@ folder, and reload the window. Every skill also works as a plain request:
 If we tell you the kit has changed, run `git pull` inside
 `egnatia-starter-kit`, then run the copy command again. The copy overwrites the
 kit's files in your project, so commit your own edits first.
+
+## The debugging exercise
+
+`turnout/` is a small event RSVP app with seven user reports to investigate. It
+is homework, and the copy command above leaves it out of your project. When you
+start it, copy it out of the kit so your fixes have their own history and a
+`git pull` of the kit never touches them. From your `egnatia` folder:
+
+```bash
+cp -R egnatia-starter-kit/turnout turnout
+cd turnout
+git init
+git add -A
+git commit -m "Turnout as received"
+```
+
+Windows PowerShell:
+
+```powershell
+Copy-Item -Recurse egnatia-starter-kit\turnout turnout
+cd turnout
+git init
+git add -A
+git commit -m "Turnout as received"
+```
+
+Then open the `turnout` folder in VS Code and follow its `README.md`.
 
 ## On the free plan
 
