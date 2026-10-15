@@ -51,8 +51,7 @@ node server.js
 Load the page and time it. Then look at the size of `data/events.json`.
 
 This is the most important bug in the exercise, because the fix is not a
-one-line change — it is a change of approach. Homework A in the curriculum
-covers where it goes next.
+one-line change — it is a change of approach.
 
 ## How to work through this
 
