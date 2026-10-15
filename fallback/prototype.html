@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype — zero-install starter</title>
+<!--
+  ZERO-INSTALL FALLBACK
+  Use this only if Node/npm did not install on your laptop.
+  Open this file by double-clicking it. No terminal, no build step.
+  It loads React, Babel and Tailwind from CDNs, so it needs internet.
+  Point Copilot (or Codex, or Claude Code) at this single file and ask it to
+  add screens.
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.2/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+// ---------------------------------------------------------------------------
+// 1. SAMPLE DATA — replace with your own. Keep it realistic.
+// ---------------------------------------------------------------------------
+const ITEMS = [
+  { id: 1, name: "Arben Hoxha",   role: "Cafe owner, Tirana",     status: "waiting",  value: 240 },
+  { id: 2, name: "Elira Bregu",   role: "Freelance designer",     status: "active",   value: 1180 },
+  { id: 3, name: "Denis Kola",    role: "Logistics, Durres",      status: "active",   value: 760 },
+  { id: 4, name: "Sara Meta",     role: "Pharmacy chain",         status: "waiting",  value: 3400 },
+  { id: 5, name: "Ilir Prifti",   role: "Independent tutor",      status: "churned",  value: 90 },
+];
+
+// ---------------------------------------------------------------------------
+// 2. SCREENS — one function per screen. Add your own below.
+// ---------------------------------------------------------------------------
+function ListScreen({ go }) {
+  return (
+    <div className="space-y-3">
+      <h1 className="text-2xl font-semibold text-slate-900">Your customers</h1>
+      <p className="text-slate-500">Click anyone to see their detail screen.</p>
+      <div className="divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
+        {ITEMS.map(item => (
+          <button
+            key={item.id}
+            onClick={() => go("detail", item)}
+            className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-slate-50"
+          >
+            <span>
+              <span className="block font-medium text-slate-900">{item.name}</span>
+              <span className="block text-sm text-slate-500">{item.role}</span>
+            </span>
+            <span className="text-sm tabular-nums text-slate-600">€{item.value}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DetailScreen({ go, item }) {
+  return (
+    <div className="space-y-4">
+      <button onClick={() => go("list")} className="text-sm text-slate-500 hover:text-slate-900">
+        ← Back
+      </button>
+      <h1 className="text-2xl font-semibold text-slate-900">{item.name}</h1>
+      <dl className="rounded-lg border border-slate-200 bg-white p-4 text-sm">
+        <div className="flex justify-between py-1">
+          <dt className="text-slate-500">Role</dt><dd className="text-slate-900">{item.role}</dd>
+        </div>
+        <div className="flex justify-between py-1">
+          <dt className="text-slate-500">Status</dt><dd className="text-slate-900">{item.status}</dd>
+        </div>
+        <div className="flex justify-between py-1">
+          <dt className="text-slate-500">Value</dt><dd className="tabular-nums text-slate-900">€{item.value}</dd>
+        </div>
+      </dl>
+      <button
+        onClick={() => go("done", item)}
+        className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700"
+      >
+        Take the main action
+      </button>
+    </div>
+  );
+}
+
+function DoneScreen({ go, item }) {
+  return (
+    <div className="space-y-4 text-center">
+      <div className="text-4xl">✓</div>
+      <h1 className="text-2xl font-semibold text-slate-900">Done for {item.name}</h1>
+      <p className="text-slate-500">This is the screen your demo ends on. Make it the payoff.</p>
+      <button onClick={() => go("list")} className="text-sm text-slate-500 hover:text-slate-900">
+        Start over
+      </button>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// 3. SCREEN SWITCHER — no router. One state value decides what renders.
+// ---------------------------------------------------------------------------
+function App() {
+  const [screen, setScreen] = useState("list");
+  const [selected, setSelected] = useState(null);
+
+  const go = (next, item = null) => {
+    if (item) setSelected(item);
+    setScreen(next);
+  };
+
+  return (
+    <div className="mx-auto min-h-screen max-w-xl px-4 py-10">
+      {screen === "list"   && <ListScreen go={go} />}
+      {screen === "detail" && <DetailScreen go={go} item={selected} />}
+      {screen === "done"   && <DoneScreen go={go} item={selected} />}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
